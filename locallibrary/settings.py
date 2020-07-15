@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'catalog',
 ]
 
 MIDDLEWARE = [
@@ -110,7 +111,13 @@ USE_L10N = True
 
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
+# Static files (CSS, JavaScript, Images) and Media files (the files that the user uploads)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+# folder where static files will be collected by collectstatic
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/staticfiles/'
+
+# folder where media files will be collected by collectstatic
+MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
+MEDIA_URL = '/mediafiles/'

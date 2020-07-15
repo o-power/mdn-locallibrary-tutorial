@@ -18,6 +18,11 @@ pip install Django
 python -m django --version
 
 django-admin startproject locallibrary .
+or
+mkdir django_projects 
+cd django_projects
+django-admin startproject locallibrary
+cd locallibrary
 
 Run the application on a local development server
 python manage.py runserver
@@ -27,3 +32,11 @@ Put SECRET_KEY in env.py file
 .gitignore
 
 Initialize, add remote, commit
+
+Create the catalog application
+python manage.py startapp catalog
+
+Register the application by adding it to the INSTALLED_APPS list in the project settings. 
+
+python manage.py makemigrations
+python manage.py migrate
