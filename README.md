@@ -40,3 +40,7 @@ Register the application by adding it to the INSTALLED_APPS list in the project 
 
 python manage.py makemigrations
 python manage.py migrate
+
+# Credits
+
+[MDN web docs Django Tutorial: The Local Library website](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Tutorial_local_library_website)
