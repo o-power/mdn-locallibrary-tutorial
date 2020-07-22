@@ -1,4 +1,13 @@
-## Setting up a development environment
+<h1 id="title">Dashing Data</h1>
+
+1. [Introduction](#introduction)
+2. [Deployment](#deployment)
+3. [Credits](#credits)
+
+<h2 id="introduction">Introduction</h2>
+
+
+<h2 id="deployment">Development Environment</h2>
 
 Virtual Environment
 venv for Python 3 or virtualenv for Python 2.
@@ -41,6 +50,6 @@ Register the application by adding it to the INSTALLED_APPS list in the project 
 python manage.py makemigrations
 python manage.py migrate
 
-# Credits
+<h2 id="credits">Credits</h2>
 
-[MDN web docs Django Tutorial: The Local Library website](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Tutorial_local_library_website)
+- The bulk of the code was taken directly from the MDN web docs [Django Tutorial: The Local Library website](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Tutorial_local_library_website) [accessed 22nd July 2020].
