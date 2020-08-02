@@ -12,6 +12,7 @@
 Virtual Environment
 venv for Python 3 or virtualenv for Python 2.
 https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment
+venv is included in the Python 3 standard library and requires no additional installation.
 python -m venv env
 source env/Scripts/activate
 
@@ -49,6 +50,32 @@ Register the application by adding it to the INSTALLED_APPS list in the project 
 
 python manage.py makemigrations
 python manage.py migrate
+
+To install the command-line tool for executing SQL statements against the SQLite database.
+Got to https://sqlite.org/download.html. Download the zip file containing the sqlite tools. Open the zip file and copy the executable files into the env/Scripts folder.
+
+sqlite3 db.sqlite3
+.tables (lists all tables)
+.headers on
+.mode column
+select * from django_migrations;
+.quit
+
+To view the SQl a migration will execute:
+python manage.py sqlmigrate catalog 0001
+
+To check a migration for errors (after makemigrations but before migrate):
+python manage.py check
+
+Create a superuser account:
+python manage.py createsuperuser
+http://127.0.0.1:8000/admin
+Redirected to http://127.0.0.1:8000/admin/login and then back to http://127.0.0.1:8000/admin.
+http://127.0.0.1:8000/admin/login/?next=/admin/
+
+Statements not used yet:
+pip freeze --local > requirements.txt
+
 
 <h2 id="credits">Credits</h2>
 
