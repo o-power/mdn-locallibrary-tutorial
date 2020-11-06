@@ -61,7 +61,7 @@ sqlite3 db.sqlite3
 select * from django_migrations;
 .quit
 
-To view the SQl a migration will execute:
+To view the SQL a migration will execute:
 python manage.py sqlmigrate catalog 0001
 
 To check a migration for errors (after makemigrations but before migrate):
@@ -76,6 +76,23 @@ http://127.0.0.1:8000/admin/login/?next=/admin/
 Statements not used yet:
 pip freeze --local > requirements.txt
 
+Static
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    '/var/www/static/',
+]
+Prefixes (optional)
+In case you want to refer to files in one of the locations with an additional namespace, you can optionally provide a prefix as (prefix, path) tuples, e.g.:
+
+STATICFILES_DIRS = [
+    # ...
+    ("downloads", "/opt/webfiles/stats"),
+]
+For example, assuming you have STATIC_URL set to '/static/', the collectstatic management command would collect the “stats” files in a 'downloads' subdirectory of STATIC_ROOT.
+
+This would allow you to refer to the local file '/opt/webfiles/stats/polls_20101022.tar.gz' with '/static/downloads/polls_20101022.tar.gz' in your templates, e.g.:
+
+<a href="{% static 'downloads/polls_20101022.tar.gz' %}">
 
 <h2 id="credits">Credits</h2>
 
